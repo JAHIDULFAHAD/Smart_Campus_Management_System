@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Login_Page">
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="427dp"
+        android:background="@drawable/bg_rounded_loginpage"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="118dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="148dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/itsc" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="93dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="#BDBDBD" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="135dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="top|center_vertical"
+                android:text="IBN TAIMIYA SCHOOL &amp; COLLEGE"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Log in using your Organization ID."
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/studentId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_profile_shape"
+            android:ems="10"
+            android:hint="User ID"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/StudentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_profile_shape"
+            android:drawableEnd="@drawable/eye_off"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#2196F3"
+            android:padding="10dp"
+            android:text="Login"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Can't sign in? Let us help."
+            android:textColor="#1565C0" />
+    </LinearLayout>
+
+</LinearLayout>
