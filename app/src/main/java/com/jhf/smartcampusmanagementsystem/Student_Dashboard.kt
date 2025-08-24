@@ -25,11 +25,13 @@ class Student_Dashboard : Fragment() {
 
         // Course list initialize
         CourseList = listOf(
-            RecyclerViewModal("Math", Color.parseColor("#FF5722"), "9 to 10 Am", "Room 308","Md. Nahid"),
-            RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10 to 11 Am", "Room 410","Md. Jahid"),
-            RecyclerViewModal("Chemistry", Color.parseColor("#2196F3"), "12 to 1 pm", "Room 309","Md. Zahid"),
-            RecyclerViewModal("Biology", Color.parseColor("#9C27B0"), "1 to 2 pm", "Room 308","Md. Zafor")
+            RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9 to 10 AM", "Room 308", "Md. Nahid"),
+            RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10 to 11 AM", "Room 410", "Md. Jahid"),
+            RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "12 to 1 PM", "Room 309", "Md. Zahid"),
+            RecyclerViewModal("Biology", Color.parseColor("#009688"), "1 to 2 PM", "Room 308", "Md. Zafor"),
+            RecyclerViewModal("Bangla", Color.parseColor("#795548"), "2 to 3 PM", "Room 204", "Md. Karim"),
         )
+
 
         // RecyclerView setup
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
@@ -40,6 +42,7 @@ class Student_Dashboard : Fragment() {
         // Assingment Details initialize
         AssingmentDetails= listOf(
             GridViewModel("Assignment 1","Math","14 Nov,8 Am","9/10","Hand In"),
+            GridViewModel("Assignment 3","Chemistry","14 Nov,8 Am","9/10","Hand In"),
             GridViewModel("Assignment 3","Chemistry","14 Nov,8 Am","9/10","Hand In"),
         )
         // GridView setup

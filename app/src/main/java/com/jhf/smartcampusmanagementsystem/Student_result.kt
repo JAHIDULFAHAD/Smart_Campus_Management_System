@@ -32,7 +32,7 @@ class Student_result : Fragment() {
         tvSubjectName = view.findViewById(R.id.tvSubjectName)
         tvTeacherName = view.findViewById(R.id.tvTeacherName)
 
-        // ================= Example Data =================
+
         subjects = listOf(
             SubjectModel(
                 name = "Mathematics",
@@ -74,9 +74,7 @@ class Student_result : Fragment() {
                 )
             )
         )
-        // =================================================
 
-        // Spinner Adapter
         val names = subjects.map { it.name }
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, names)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

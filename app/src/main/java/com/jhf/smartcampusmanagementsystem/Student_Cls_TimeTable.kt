@@ -19,35 +19,61 @@ class Student_Cls_TimeTable : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_student__cls__time_table, container, false)
 
-        // Sample courses
+        // Horizontal RecyclerView Example
         CourseList = listOf(
-            RecyclerViewModal("Math", Color.parseColor("#FF5722"), "9:00 AM - 10:00 AM", "Room 308","Md. Nahid"),
-            RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 AM - 11:00 AM", "Room 410","Md. Jahid"),
-            RecyclerViewModal("Chemistry", Color.parseColor("#2196F3"), "12:00 PM - 1:00 PM", "Room 309","Md. Zahid"),
-            RecyclerViewModal("Biology", Color.parseColor("#9C27B0"), "1:00 PM - 2:00 PM", "Room 308","Md. Zafor")
+            RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9 to 10 AM", "Room 308", "Md. Nahid"),
+            RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10 to 11 AM", "Room 410", "Md. Jahid"),
+            RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "12 to 1 PM", "Room 309", "Md. Zahid"),
+            RecyclerViewModal("Biology", Color.parseColor("#009688"), "1 to 2 PM", "Room 308", "Md. Zafor"),
+            RecyclerViewModal("English", Color.parseColor("#795548"), "2 to 3 PM", "Room 204", "Md. Karim"),
         )
 
-        // Horizontal RecyclerView setup
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         val adapter = HorizontalAdapter(CourseList, requireContext())
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = adapter
 
+
         val weeklySchedule: Map<String, List<RecyclerViewModal>> = mapOf(
+            "Sunday" to listOf(
+                RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9:00 - 9:50 AM", "Room 308","Md. Nahid"),
+                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 - 10:50 AM", "Room 410","Md. Jahid"),
+                RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "11:00 - 11:50 AM", "Room 309","Md. Zahid")
+            ),
             "Monday" to listOf(
-                RecyclerViewModal("Math", Color.parseColor("#FF5722"), "9:00 - 10:00 Am", "Room 308","Md. Nahid"),
-                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00AM - 11:00 Am", "Room 410","Md. Jahid")
+                RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9:00 - 9:50 AM", "Room 308","Md. Nahid"),
+                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 - 10:50 AM", "Room 410","Md. Jahid"),
+                RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "11:00 - 11:50 AM", "Room 309","Md. Zahid"),
+                RecyclerViewModal("Biology", Color.parseColor("#009688"), "12:00 - 12:50 PM", "Room 308","Md. Zafor"),
+                RecyclerViewModal("English", Color.parseColor("#795548"), "1:00 - 1:50 PM", "Room 205","Mrs. Akter")
             ),
             "Tuesday" to listOf(
-                RecyclerViewModal("Chemistry", Color.parseColor("#2196F3"), "9:00 - 10:00", "Room 309","Md. Zahid"),
-                RecyclerViewModal("Biology", Color.parseColor("#9C27B0"), "10:00 - 11:00", "Room 308","Md. Zafor")
+                RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9:00 - 9:50 AM", "Room 308","Md. Nahid"),
+                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 - 10:50 AM", "Room 410","Md. Jahid"),
+                RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "11:00 - 11:50 AM", "Room 309","Md. Zahid"),
+                RecyclerViewModal("Biology", Color.parseColor("#009688"), "12:00 - 12:50 PM", "Room 308","Md. Zafor"),
+                RecyclerViewModal("English", Color.parseColor("#795548"), "1:00 - 1:50 PM", "Room 205","Mrs. Akter")
             ),
             "Wednesday" to listOf(
-                RecyclerViewModal("Math", Color.parseColor("#FF5722"), "9:00 - 10:00", "Room 308","Md. Nahid"),
-                RecyclerViewModal("Biology", Color.parseColor("#9C27B0"), "10:00 - 11:00", "Room 308","Md. Zafor")
+                RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9:00 - 9:50 AM", "Room 308","Md. Nahid"),
+                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 - 10:50 AM", "Room 410","Md. Jahid"),
+                RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "11:00 - 11:50 AM", "Room 309","Md. Zahid"),
+                RecyclerViewModal("Biology", Color.parseColor("#009688"), "12:00 - 12:50 PM", "Room 308","Md. Zafor")
+            ),
+            "Thursday" to listOf(
+                RecyclerViewModal("Math", Color.parseColor("#2196F3"), "9:00 - 9:50 AM", "Room 308","Md. Nahid"),
+                RecyclerViewModal("Physics", Color.parseColor("#4CAF50"), "10:00 - 10:50 AM", "Room 410","Md. Jahid"),
+                RecyclerViewModal("Chemistry", Color.parseColor("#9C27B0"), "11:00 - 11:50 AM", "Room 309","Md. Zahid"),
+                RecyclerViewModal("Biology", Color.parseColor("#009688"), "12:00 - 12:50 PM", "Room 308","Md. Zafor")
+            ),
+            "Friday" to listOf(
+                RecyclerViewModal("No Class", Color.parseColor("#B0BEC5"), "", "", "")
+            ),
+            "Saturday" to listOf(
+                RecyclerViewModal("No Class", Color.parseColor("#B0BEC5"), "", "", "")
             )
         )
 
@@ -58,19 +84,24 @@ class Student_Cls_TimeTable : Fragment() {
             val dayCard = inflater.inflate(R.layout.day_schedule, weeklyContainer, false)
             val tvDay = dayCard.findViewById<TextView>(R.id.tvDay)
             val scheduleContainer = dayCard.findViewById<LinearLayout>(R.id.scheduleContainer)
-
             tvDay.text = day
 
-            // Loop through courses to create slots
             for (course in courses) {
                 val slotView = inflater.inflate(R.layout.item_clstime_slot, scheduleContainer, false)
 
-                slotView.findViewById<TextView>(R.id.tvTime).text = course.ClassTime
-                slotView.findViewById<TextView>(R.id.tvSubject).text = course.SubName
-                slotView.findViewById<TextView>(R.id.tvRoom).text = course.ClassRoom
-                slotView.findViewById<TextView>(R.id.tvTeacher).text = course.TeacherName
+                val tvTime = slotView.findViewById<TextView>(R.id.tvTime)
+                val tvSubject = slotView.findViewById<TextView>(R.id.tvSubject)
+                val tvRoom = slotView.findViewById<TextView>(R.id.tvRoom)
+                val tvTeacher = slotView.findViewById<TextView>(R.id.tvTeacher)
 
-                // Set background color to course color
+                tvTime.text = course.ClassTime
+                tvSubject.text = course.SubName
+                tvRoom.text = course.ClassRoom
+                tvTeacher.text = course.TeacherName
+
+                tvSubject.setTextColor(course.SubColor)
+
+
                 scheduleContainer.addView(slotView)
             }
 

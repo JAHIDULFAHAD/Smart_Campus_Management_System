@@ -263,6 +263,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edit_text_profile_shape"
+                    android:drawableEnd="@drawable/eye_off"
                     android:inputType="textPassword"
                     android:padding="12dp" />
 
@@ -281,6 +282,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edit_text_profile_shape"
+                    android:drawableEnd="@drawable/eye_off"
                     android:inputType="textPassword"
                     android:padding="12dp" />
 
