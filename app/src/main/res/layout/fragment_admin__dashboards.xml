@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Quick Stats Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvTotalStudents"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#FFEB3B"
+                android:padding="16dp"
+                android:text="Students: 0"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/tvTotalTeachers"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#8BC34A"
+                android:padding="16dp"
+                android:text="Teachers: 0"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvTotalClasses"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#03A9F4"
+                android:padding="16dp"
+                android:text="Classes: 0"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/tvNotices"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#FF5722"
+                android:padding="16dp"
+                android:text="Notices: 0"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- Quick Actions Grid -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quick Actions"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="8dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/btnAddStudent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Add Student"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnAddTeacher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Add Teacher"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnManageClasses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Manage Classes"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnPostNotice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Post Notice"
+                android:layout_margin="8dp"/>
+        </GridLayout>
+
+        <!-- Optional: Upcoming Tasks / Alerts -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Tasks"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvUpcomingExams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next Exam: Math - 25 Sep"
+                android:padding="8dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvPendingAssignments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pending Assignment: DBMS"
+                android:padding="8dp"
+                android:background="#E0E0E0"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

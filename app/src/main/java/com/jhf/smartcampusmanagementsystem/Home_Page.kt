@@ -10,16 +10,17 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.jhf.smartcampusmanagementsystem.databinding.ActivityHomePageBinding
+import com.jhf.smartcampusmanagementsystem.databinding.ActivityStudentHomePageBinding
+
 
 class Home_Page : AppCompatActivity() {
-    lateinit var binding: ActivityHomePageBinding
+    lateinit var binding: ActivityStudentHomePageBinding
     lateinit var profileImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityHomePageBinding.inflate(layoutInflater)
+        binding = ActivityStudentHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

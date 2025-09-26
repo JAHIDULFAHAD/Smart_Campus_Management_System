@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartCampusManagementSystem">
         <activity
+            android:name=".Admin_Home_page"
+            android:exported="false" />
+        <activity
             android:name=".Home_Page"
             android:exported="false" />
         <activity
