@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,7 +22,8 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#FFEB3B"
+                android:background="@drawable/admin_text_rounded_box"
+                android:backgroundTint="#FFEB3B"
                 android:padding="16dp"
                 android:text="Students: 0"
                 android:gravity="center"
@@ -35,12 +35,14 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#8BC34A"
+                android:background="@drawable/admin_text_rounded_box"
+                android:backgroundTint="#8BC34A"
                 android:padding="16dp"
                 android:text="Teachers: 0"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:layout_marginStart="4dp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -55,7 +57,8 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#03A9F4"
+                android:background="@drawable/admin_text_rounded_box"
+                android:backgroundTint="#03A9F4"
                 android:padding="16dp"
                 android:text="Classes: 0"
                 android:gravity="center"
@@ -67,12 +70,14 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#FF5722"
+                android:background="@drawable/admin_text_rounded_box"
+                android:backgroundTint="#FF5722"
                 android:padding="16dp"
                 android:text="Notices: 0"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:layout_marginStart="4dp"/>
+
         </LinearLayout>
 
         <!-- Quick Actions Grid -->
@@ -88,73 +93,76 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2">
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
 
             <Button
                 android:id="@+id/btnAddStudent"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_columnWeight="1"
                 android:text="Add Student"
-                android:layout_margin="8dp"/>
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#FFEB3B"
+                android:elevation="4dp"
+                android:layout_margin="8dp"
+                android:clipToOutline="true"
+                android:stateListAnimator="@null"
+                android:background="@drawable/rounded_button"/>
 
             <Button
                 android:id="@+id/btnAddTeacher"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_columnWeight="1"
                 android:text="Add Teacher"
-                android:layout_margin="8dp"/>
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#8BC34A"
+                android:elevation="4dp"
+                android:layout_margin="8dp"
+                android:clipToOutline="true"
+                android:stateListAnimator="@null"
+                android:background="@drawable/rounded_button"/>
 
             <Button
                 android:id="@+id/btnManageClasses"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_columnWeight="1"
                 android:text="Manage Classes"
-                android:layout_margin="8dp"/>
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#03A9F4"
+                android:elevation="4dp"
+                android:layout_margin="8dp"
+                android:clipToOutline="true"
+                android:stateListAnimator="@null"
+                android:background="@drawable/rounded_button"/>
 
             <Button
                 android:id="@+id/btnPostNotice"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_columnWeight="1"
                 android:text="Post Notice"
-                android:layout_margin="8dp"/>
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#FF5722"
+                android:elevation="4dp"
+                android:layout_margin="8dp"
+                android:clipToOutline="true"
+                android:stateListAnimator="@null"
+                android:background="@drawable/rounded_button"/>
         </GridLayout>
 
-        <!-- Optional: Upcoming Tasks / Alerts -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upcoming Tasks"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:paddingBottom="8dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvUpcomingExams"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Next Exam: Math - 25 Sep"
-                android:padding="8dp"
-                android:background="#E0E0E0"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:id="@+id/tvPendingAssignments"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pending Assignment: DBMS"
-                android:padding="8dp"
-                android:background="#E0E0E0"/>
-        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

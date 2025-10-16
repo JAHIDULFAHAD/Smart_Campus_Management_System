@@ -7,25 +7,26 @@
     android:padding="16dp">
 
     <!-- Title -->
-
-    <!-- Subject Selection Spinner -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text=" Result"
+        android:text="Result"
         android:textColor="#2C3E50"
         android:textSize="22sp"
         android:textStyle="bold" />
 
+    <!-- Subject Selection -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EFEFEF"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,15 +41,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            android:padding="5dp" />
     </LinearLayout>
 
-    <!-- Teacher Name -->
+    <!-- Subject + Teacher Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="12dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="6dp">
@@ -56,13 +56,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4CAF50"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="#4CAF50">
 
             <TextView
                 android:id="@+id/tvSubjectName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Subject Name"
                 android:textColor="@android:color/white"
@@ -71,7 +71,7 @@
 
             <TextView
                 android:id="@+id/tvTeacherName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Teacher Name"
@@ -80,11 +80,47 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Term + Total Marks -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#DDDDDD"
+        android:layout_marginBottom="4dp">
 
+        <TextView
+            android:id="@+id/tvTerm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1st Term"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tvTotalMarks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <!-- Components RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSec"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:clipToPadding="false"
         android:paddingTop="5dp" />
 </LinearLayout>

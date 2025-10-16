@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvClassName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class 10"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Math"
+        android:textSize="14sp"
+        android:paddingTop="2dp"/>
+
+    <TextView
+        android:id="@+id/tvRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room: 401"
+        android:textSize="14sp"
+        android:paddingTop="2dp"/>
+
+    <TextView
+        android:id="@+id/tvDayTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun, 9-10 Am"
+        android:textSize="14sp"
+        android:paddingTop="2dp"/>
+
+</LinearLayout>

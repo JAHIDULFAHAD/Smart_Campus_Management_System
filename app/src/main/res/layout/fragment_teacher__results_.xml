@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootTeacherResults"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:descendantFocusability="afterDescendants">
+
+
+    <!-- 1. available schedules / classes for this teacher -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Class / Schedule"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerSchedules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="8dp" />
+
+    <!-- 2. select term -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Term"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinnerTerm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"/>
+
+    <!-- 3. add component button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        >
+
+        <Button
+            android:id="@+id/btnAddComponentGlobal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add Component (for all students)"/>
+
+        <Button
+            android:id="@+id/btnLoadStudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Students"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- list of students + dynamic component input -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStudentsForMarks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnSaveMarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save / Upload Marks" />
+
+</LinearLayout>

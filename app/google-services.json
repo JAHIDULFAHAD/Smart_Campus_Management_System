@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "657266612137",
+    "firebase_url": "https://smartcampusmanagement-cce20-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartcampusmanagement-cce20",
+    "storage_bucket": "smartcampusmanagement-cce20.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657266612137:android:277f4c55504f30a82a96b8",
+        "android_client_info": {
+          "package_name": "com.jhf.smartcampusmanagementsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtobMM046nCR2pa48gwq8Xg7zj9fDuIOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

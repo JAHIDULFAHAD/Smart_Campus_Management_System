@@ -2,8 +2,8 @@ package com.jhf.smartcampusmanagementsystem
 
 class GridViewModel (
     val title: String,
-    val description: String,
+    val subject: String,
     val datetime: String,
     val result: String,
-    val button: String
+    val buttonText: String
 )

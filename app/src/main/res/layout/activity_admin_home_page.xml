@@ -5,128 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/materialToolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
+            <!-- Profile Image -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/avatarImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/mypic"
+                android:src="@drawable/blank_profile"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@android:color/white"/>
+                app:civ_border_color="@android:color/white"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true" />
 
+            <!-- Welcome + Name -->
             <LinearLayout
                 android:id="@+id/layout1"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="60dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/avatarImage"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
 
                 <TextView
                     android:id="@+id/wc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Welcome" />
+                    android:text="Welcome"
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:id="@+id/name"
-                    android:layout_width="152dp"
-                    android:layout_height="36dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Jahidul Haque Fahad" />
+                    android:text="Jahidul Haque Fahad"
+                    android:textSize="16sp"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layout2"
-                android:layout_width="109dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="240dp"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/search"
-                    android:layout_width="97dp"
-                    android:layout_height="29dp"
-                    android:layout_marginTop="5dp"
-                    android:padding="5dp"
-                    android:background="@drawable/edit_text_shape"
-                    android:drawableLeft="@drawable/outline_search_24"
-                    android:ems="10"
-                    android:hint="Search"
-                    android:inputType="text"
-                    android:textSize="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/layout3"
-                android:layout_width="109dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="340dp"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/notification"
-                    android:layout_width="50dp"
-                    android:layout_height="29dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/edit_text_shape"
-                    android:drawableLeft="@drawable/outline_notifications_24"
-                    android:ems="10"
-                    android:text="50"
-                    android:inputType="text"
-                    android:textSize="16dp"
-                    android:focusable="false"
-                    android:cursorVisible="false"
-                    android:clickable="true"
-                    android:longClickable="false"
-                    />
-            </LinearLayout>
-
+            <!-- Logout Button -->
+            <ImageButton
+                android:id="@+id/buttonLogout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/logout_button"/>
         </RelativeLayout>
-
     </com.google.android.material.appbar.MaterialToolbar>
 
+    <!-- Divider -->
     <View
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#BDBDBD"
-        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materialToolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Fragment Container -->
     <FrameLayout
         android:id="@+id/fragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/materialToolbar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    </FrameLayout>
-
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_navigation_menu_admin"
         app:labelVisibilityMode="labeled"
-        app:itemIconSize="32dp"
-        />
-
+        app:itemIconSize="32dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

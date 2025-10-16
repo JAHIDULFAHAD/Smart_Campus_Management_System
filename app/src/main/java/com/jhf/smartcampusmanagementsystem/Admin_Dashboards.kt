@@ -1,59 +1,104 @@
 package com.jhf.smartcampusmanagementsystem
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Admin_Dashboards.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Admin_Dashboards : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var db: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin__dashboards, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_admin__dashboards, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Admin_Dashboards.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Admin_Dashboards().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        // Quick Stats TextViews
+        val tvTotalStudents = view.findViewById<TextView>(R.id.tvTotalStudents)
+        val tvTotalTeachers = view.findViewById<TextView>(R.id.tvTotalTeachers)
+        val tvTotalClasses = view.findViewById<TextView>(R.id.tvTotalClasses)
+        val tvNotices = view.findViewById<TextView>(R.id.tvNotices)
+
+        db = FirebaseDatabase.getInstance().reference
+
+        // Fetch Students Count
+        db.child("users").orderByChild("role").equalTo("student")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val count = snapshot.childrenCount
+                    tvTotalStudents.text = "Students: $count"
                 }
+                override fun onCancelled(error: DatabaseError) {}
+            })
+
+        // Fetch Teachers Count
+        db.child("users").orderByChild("role").equalTo("teacher")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val count = snapshot.childrenCount
+                    tvTotalTeachers.text = "Teachers: $count"
+                }
+                override fun onCancelled(error: DatabaseError) {}
+            })
+
+        // Fetch Classes Count
+        db.child("classes").addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val count = snapshot.childrenCount
+                tvTotalClasses.text = "Classes: $count"
             }
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+        // Total Notices
+        db.child("notices").addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var totalNotices = 0L
+                for (child in snapshot.children) {
+                    totalNotices += child.childrenCount  // Count notices under student and teacher
+                }
+                tvNotices.text = "Notices: $totalNotices"
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+
+        // Button Navigation
+        view.findViewById<Button>(R.id.btnAddStudent).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, Admin_Add_Student_Fragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.btnAddTeacher).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, Admin_Add_Teacher_Fragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.btnManageClasses).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, Admin_Manage_Classes_Fragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.btnPostNotice).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, Admin_Notice_Fragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        return view
     }
 }

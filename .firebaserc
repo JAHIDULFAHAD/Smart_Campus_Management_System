@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "device-streaming-74b3b173",
+    "prod": "smartcampusmanagement-cce20"
+  },
+  "targets": {},
+  "etags": {}
+}
