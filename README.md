@@ -1,4 +1,4 @@
-# Smart Campus Management System
+# ITSC Smart Campus Management System
 
 A comprehensive Android application built with Kotlin and Firebase designed to streamline campus operations for administrators, teachers, and students. This system provides a centralized platform for managing classes, schedules, notices, and academic results.
 
